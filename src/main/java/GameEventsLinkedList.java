@@ -1,26 +1,18 @@
-/**
- * <h1>GameEventsLinkedList</h1>
- * <h2>CISC 181-052L Spring 2023</h2>
- * <h3>University of Delaware</h3>
- * The major game event class involving linked lists.
- * @author Zach Phillips
- * @version 1.0
- * @since 2023-02-14
- */
 class GameEvent {
+    private int playerNumber;
+    private String eventType;
+    private String eventDetails;
 
-    int playerNumber;
-    String eventType;
-    String eventDetails;
-
-    public GameEvent(int playerNumber, String eventType, String eventDetails) {
+    // 3 Parameter Constructor
+    GameEvent(int playerNumber, String eventType, String eventDetails) {
         this.playerNumber = playerNumber;
         this.eventType = eventType;
         this.eventDetails = eventDetails;
     }
 
+    // Getters and setters
     public int getPlayerNumber() {
-        return playerNumber;
+        return this.playerNumber;
     }
 
     public void setPlayerNumber(int playerNumber) {
@@ -28,7 +20,7 @@ class GameEvent {
     }
 
     public String getEventType() {
-        return eventType;
+        return this.eventType;
     }
 
     public void setEventType(String eventType) {
@@ -36,28 +28,28 @@ class GameEvent {
     }
 
     public String getEventDetails() {
-        return eventDetails;
+        return this.eventDetails;
     }
 
     public void setEventDetails(String eventDetails) {
         this.eventDetails = eventDetails;
     }
+
 }
 
-
 class GameEventNode {
+    private GameEvent gameState;
+    private GameEventNode next;
 
-    GameEvent gameState;
-    GameEventNode next;
-
-    public GameEventNode(GameEvent gameState) {
+    // 1 Parameter Constructor
+    GameEventNode(GameEvent gameState){
         this.gameState = gameState;
         this.next = null;
     }
 
-
+    // Getters and setters
     public GameEvent getGameState() {
-        return gameState;
+        return this.gameState;
     }
 
     public void setGameState(GameEvent gameState) {
@@ -65,7 +57,7 @@ class GameEventNode {
     }
 
     public GameEventNode getNext() {
-        return next;
+        return this.next;
     }
 
     public void setNext(GameEventNode next) {
@@ -73,54 +65,74 @@ class GameEventNode {
     }
 }
 
-
 public class GameEventsLinkedList {
-
-    GameEventNode head;
-    // Size of the Linked List
-    int size;
+    private GameEventNode head;
+    private int size;
 
     public GameEventsLinkedList() {
-        this.head = null;
-        this.size = 0;
+        head = null;
+        size = 0;
     }
 
-    public boolean isEmpty() { return size == 0; }
+    public int getSize() {
+        return this.size;
+    }
 
-    public void add(GameEventNode nextEvent) {
+    public boolean isEmpty() {
+        return head == null && size == 0;
+    }
 
-        GameEventNode current = head;
-
-        if (head == null) {
-            GameEventNode newGameEventNode = new GameEventNode(nextEvent.gameState);
-        }
-        else if (size == 1) {
-            head.next = new GameEventNode(nextEvent.gameState);
+    public void add(GameEventNode node) {
+        if (isEmpty()) {
+            head = node;
         }
         else {
-            while (current.next != null) {
+            GameEventNode current = head;
+            while (current.getNext() != null) {
                 current = current.getNext();
             }
-            current.setNext(nextEvent);
+            current.setNext(node);
         }
         size++;
-
     }
 
-    public GameEvent remove(GameEventNode removedEvent) {
-        size -= 1;
-        return null;
+    public GameEvent remove(GameEventNode node) {
+        GameEventNode current = head;
+        GameEventNode remove = head;
+        if (isEmpty()) {return null;}
+        else if (head.equals(node)) {
+            head = head.getNext();
+            size--;
+            return remove.getGameState();
+        }
+        while(current.getNext() != null && !current.getNext().equals(node)) {
+            current = current.getNext();
+            remove = current;
+        }
+        current.setNext(current.getNext().getNext());
+        size--;
+        return remove.getGameState();
     }
 
-    public GameEventsLinkedList extract(String event) {
-        //if the string matches an event type, it will return the GameEventNode that matches the string
-        return null;
+    public GameEventsLinkedList extract(String search) {
+        GameEventNode current = head;
+        GameEventsLinkedList match = new GameEventsLinkedList();
+
+        //if (isEmpty()) {return match;}
+        while (current != null) {
+            if (current.getGameState().getEventType().equals(search)) {
+                match.add(new GameEventNode(current.getGameState()));
+            }
+            current = current.getNext();
+        }
+        return match;
     }
 
     public void display() {
-        //navigates through the GameEventsLinkedList and prints out each node's Event Details.
+        GameEventNode current = head;
+        while (current != null) {
+            System.out.println(current.getGameState().getEventDetails());
+            current = current.getNext();
+        }
     }
 }
-
-
-
