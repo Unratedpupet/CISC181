@@ -1,5 +1,3 @@
-import java.util.Random;
-
 /**
  * <h1>GameBoard</h1>
  * <h2>CISC 181-052L Spring 2023</h2>

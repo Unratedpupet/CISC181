@@ -18,7 +18,7 @@ public class Player {
     public Player (int playerNumber, boolean isTurn, Team unit) {
         this.playerNumber = playerNumber;
         this.isTurn = isTurn;
-        this.team = team;
+        this.team = unit;
     }
 
     public Player (int playerNumber, Team team) {

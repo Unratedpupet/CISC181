@@ -21,6 +21,10 @@ public abstract class Attacker extends Unit {
         this.numAttacks = numAttacks;
     }
 
+    public Attacker(char symbol, String name, String teamColor, double health, double healthModifier, double damage,
+            double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier) {
+    }
+
     /**
      * Gets numAttacks
      * @return - Int - Number of attacks.

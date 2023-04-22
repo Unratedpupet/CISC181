@@ -22,6 +22,10 @@ public abstract class Recruiter extends Unit{
         this.numRecruits = numRecruits;
     }
 
+    public Recruiter(char symbol, String name, String teamColor, double health, double healthModifier, double damage,
+            double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier) {
+    }
+
     /**
      * Gets the number of recruits
      * @return - Int - Number of attacks.
