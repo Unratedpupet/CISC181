@@ -1,22 +1,26 @@
-/**
- * Part A) In the main method:
- *
- * create one Bead object that is not attached to another Bead object
- * create one Bracelet object that contains your newly created Bead object
- * create another Bead with a different color than the first Bead you created
- * add it to your Bracelet using the addBead method
- * What is the order of the bead colors in your Bracelet? - write a comment inside of main with the answer
- * Part B) Fill in the missing code in the countBeads method in the Bracelet class. (It helps to draw it.)
- */
-
 
 public class PracticeSet4 {
     public static void main(String[] args) {
-        // Put your code for Part C here
+        // Put your code for Part A here
+
+        //Create bead
+        Bead bead1 = new Bead("Red", null);
+        //Create bracelet then add the new bead.
+        Bracelet braceletOne = new Bracelet();
+        braceletOne.addBead(bead1);
+        //New bead w/ new color
+        Bead bead2 = new Bead("Green", null);
+        braceletOne.addBead(bead2);
+
+        System.out.println(braceletOne.getStart().getColor());
+        System.out.println(braceletOne.getStart().getNext().getColor());
+
+        System.out.println(braceletOne.countBeads());
+
 
 
         // The order of the bead colors is:
-
+        //Green -> Red
         // Do not modify this class otherwise
     }
 }
@@ -49,9 +53,23 @@ class Bracelet {
 
   /* Uncomment this method and complete it as part B
   This method should return the number of bead in the bracelet
-  public int countBeads(){
 
+   */
+  public int countBeads(){
+    int beadCount = 0;
+    Bead temp = this.start;
+    if (getStart() == null) {
+        return 0;
+    }
+    while (temp != null) {
+        beadCount++;
+        temp = temp.getNext();
+    }
+
+
+
+    return beadCount;
   }
-  */
+
 }
 
