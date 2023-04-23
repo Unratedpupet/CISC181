@@ -1,5 +1,5 @@
-import org.junit.jupiter.api.Test;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
@@ -8,7 +8,7 @@ class PlayerTest {
     void getPlayerNumber() {
         System.out.println("Testing getPlayerNumber");
         Player player1 = new Player();
-        assertEquals(999, player1.getPlayerNumber());
+        assertEquals(1, player1.getPlayerNumber());
     }
 
     @Test

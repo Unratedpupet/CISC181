@@ -1,3 +1,4 @@
+
 /**
  * <h1>Attacker</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
@@ -13,16 +14,14 @@ public abstract class Attacker extends Unit {
     private int numAttacks;
 
     // One parameter constructor
-    public Attacker(int numAttacks) {
+    public Attacker(
+                char symbol, String name, String teamColor, double health, double healthModifier, double damage, 
+                double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier, int numAttacks
+            ) {
         super(
-                'A', "Attacker", "Black", 100.0, 0.0, 25.0, 0.0,
-                0, 5, 5, 5, 0
+           symbol, name, teamColor, health, healthModifier, damage, damageModifier, luck, xCor, yCor, movement, movementModifier 
         );
         this.numAttacks = numAttacks;
-    }
-
-    public Attacker(char symbol, String name, String teamColor, double health, double healthModifier, double damage,
-            double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier) {
     }
 
     /**

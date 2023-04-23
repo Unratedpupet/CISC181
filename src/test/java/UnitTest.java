@@ -1,11 +1,9 @@
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-
-
 
 public class UnitTest {
 
@@ -35,7 +33,7 @@ public class UnitTest {
         System.out.println("Testing Unit Constructor passes");
 
         // spawn should not be implemented in the Unit class
-        Method m = clazz.getDeclaredMethod("spawn", null);
+        Method m = clazz.getDeclaredMethod("spawn", (Class<?>[])null);
         assertEquals(Unit.class, m.getReturnType());
         assertTrue(Modifier.isAbstract(m.getModifiers()));
 

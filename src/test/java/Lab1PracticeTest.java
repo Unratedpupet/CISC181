@@ -1,5 +1,6 @@
-import org.junit.Test;
-import static org.junit.Assert.*;
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 /**
@@ -16,7 +17,7 @@ import static org.junit.Assert.*;
  * @since 2023-02-14
  */
 public class Lab1PracticeTest {
-    @org.junit.jupiter.api.Test
+    @Test
     void testAreaScalene() {
         System.out.println("Testing area scalene");
         assertEquals(3.96, Lab1Practice.areaScalene(5.5,3.4,8.7), 0.0001);
@@ -24,7 +25,7 @@ public class Lab1PracticeTest {
         assertEquals(1.4198591479439084, Lab1Practice.areaScalene(2.2,1.6,3.4), 0.0001);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void testOkCourses() {
         System.out.println("Testing okCourses");
         assertFalse(Lab1Practice.okCourses(11,4));

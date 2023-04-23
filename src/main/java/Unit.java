@@ -1,3 +1,4 @@
+
 /**
  * <h1>Unit</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
@@ -149,6 +150,4 @@ public abstract class Unit {
     public String toString(){
         return teamColor + " " + symbol;
     }
-
-    public abstract boolean canSpawn();
 }

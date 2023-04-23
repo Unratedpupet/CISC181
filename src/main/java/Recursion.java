@@ -1,3 +1,4 @@
+
 public class Recursion {
     public static void mystery1(int num) {
         if (num >= 0 && num <= 9){

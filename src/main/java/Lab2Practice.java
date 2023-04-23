@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Lab2Practice {
@@ -123,10 +124,7 @@ public class Lab2Practice {
 
 
     public static void main(String[] args) {
-        String action;
-
         Scanner input = new Scanner(System.in);
-
 
         getUserNextActionType(input);
         getValidInt(-10, 10, input);

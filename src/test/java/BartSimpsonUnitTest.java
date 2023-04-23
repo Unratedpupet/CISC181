@@ -1,3 +1,4 @@
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -125,7 +126,7 @@ class BartSimpsonUnitTest {
     public void testingBartSimpsonParameterConstructor() {
         System.out.println("Creating Bart Simpson with 14 parameter constructor");
 
-        BartSimpsonUnit bs = new BartSimpsonUnit('B', "Bart Simpson", "Blue", 99.0, 0.5, 20.0, 0.5, 2, 4, 4, 4, 2, 2, false, false);
+        BartSimpsonUnit bs = new BartSimpsonUnit('B', "Bart Simpson", "Blue", 99.0, 0.5, 20.0, 0.5, 2, 4, 4, 4, 2, 2, 0,false, false);
 
         System.out.println("-- Testing getHealthModifier");
         assertEquals(0.5, bs.getHealthModifier());
@@ -189,6 +190,7 @@ class BartSimpsonUnitTest {
         // Now that max time number of spawns reached - it
         // shouldn't be able to spawn anymore
         assertFalse(bart.canSpawn());
+        assertFalse(lilBart.canSpawn());
 
     }
 

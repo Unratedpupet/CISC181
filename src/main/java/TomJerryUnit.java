@@ -1,3 +1,4 @@
+
 /**
  * <h1>TomJerryUnit</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
@@ -17,15 +18,15 @@ public class TomJerryUnit extends Attacker {
     private boolean offerCheese;
     private boolean hiding;
 
-    public TomJerryUnit(char symbol, String name, String teamColor, double health, double healthModifier, double damage, double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier, boolean homingRocket, boolean offerCheese, boolean hiding) {
-        super(symbol, name, teamColor, health, healthModifier, damage, damageModifier, luck, xCor, yCor, movement, movementModifier);
+    public TomJerryUnit(char symbol, String name, String teamColor, double health, double healthModifier, double damage, double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier, int numAttacks, boolean homingRocket, boolean offerCheese, boolean hiding) {
+        super(symbol, name, teamColor, health, healthModifier, damage, damageModifier, luck, xCor, yCor, movement, movementModifier, numAttacks);
         this.homingRocket = homingRocket;
         this.offerCheese = offerCheese;
         this.hiding = hiding;
     }
 
     public TomJerryUnit(boolean homingRocket, boolean offerCheese, boolean hiding) {
-        super('T', "Tom & Jerry", "red", 100.0, 0.0, 25.0, 0.0, 0, 5, 5, 1, 0);
+        super('T', "Tom & Jerry", "Red", 100.0, 0.0, 25.0, 0.0, 0, 5, 5, 1, 0, 0);
         this.homingRocket = homingRocket;
         this.offerCheese = offerCheese;
         this.hiding = hiding;
@@ -89,10 +90,7 @@ public class TomJerryUnit extends Attacker {
 
     @Override
     public TomJerryUnit spawn() {
-        TomJerryUnit tj = new TomJerryUnit('t', "Tom & Jerry", "Blue", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, true, true, false);
+        TomJerryUnit tj = new TomJerryUnit('t', "Tom & Jerry", "Blu", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, true, true, false);
         return tj;
     }
-
-
-    public boolean canSpawn() { return true; }
 }

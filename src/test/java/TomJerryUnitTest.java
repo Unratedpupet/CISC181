@@ -1,7 +1,6 @@
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-
 
 public class TomJerryUnitTest {
 
@@ -140,7 +139,7 @@ public class TomJerryUnitTest {
         System.out.println("Creating Tom & Jerry with 14 parameter constructor");
 
         TomJerryUnit tj = new TomJerryUnit('T', "Tom And Jerry", "Blue", 100.0, 10.0,
-                25.0, 5.0, 1, 1, 1, 0, 1,
+                25.0, 5.0, 1, 1, 1, 0, 1, 0,
                 true, true, false);
 
         System.out.println();

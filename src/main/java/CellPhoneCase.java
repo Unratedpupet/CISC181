@@ -1,3 +1,4 @@
+
 public class CellPhoneCase extends Case{
 
     private CellPhone cell;
@@ -36,7 +37,7 @@ public class CellPhoneCase extends Case{
         System.out.println(cell2Case);
 
         System.out.println("Swapping cases");
-        CellPhoneCase.swapPhones(cell1Case, cell2Case);
+        swapPhones(cell1Case, cell2Case);
         System.out.println(cell1Case);
         System.out.println(cell2Case);
     }

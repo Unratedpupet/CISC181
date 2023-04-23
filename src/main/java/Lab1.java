@@ -1,3 +1,4 @@
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -46,7 +47,7 @@ public class Lab1 {
         Scanner scnr = new Scanner(System.in);
 
         // Checks to see if it is player one's turn.
-        if (playerOnesTurn) {
+        if (playerOnesTurn && !playerTwosTurn) {
             String s = scnr.nextLine();
             System.out.println("You entered string: " + s);
 
@@ -89,5 +90,6 @@ public class Lab1 {
         else {
             System.out.println("Player 1 and Player 2 Tied");
         }
+        scnr.close();
     }
 }

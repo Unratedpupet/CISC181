@@ -1,3 +1,4 @@
+
 /**
  * <h1>TomJerryUnit</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
@@ -17,15 +18,15 @@ public class BartSimpsonUnit extends Recruiter {
     final int MAX_NUM_SPAWNED = 1;
 
 
-    public BartSimpsonUnit(char symbol, String name, String teamColor, double health, double healthModifier, double damage, double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier, int numTimesSpawned, boolean distract, boolean recruit) {
-        super(symbol, name, teamColor, health, healthModifier, damage, damageModifier, luck, xCor, yCor, movement, movementModifier);
+    public BartSimpsonUnit(char symbol, String name, String teamColor, double health, double healthModifier, double damage, double damageModifier, int luck, int xCor, int yCor, int movement, int movementModifier, int numRecruits, int numTimesSpawned, boolean distract, boolean recruit) {
+        super(symbol, name, teamColor, health, healthModifier, damage, damageModifier, luck, xCor, yCor, movement, movementModifier, numRecruits);
         this.numTimesSpawned = numTimesSpawned;
         this.distract = distract;
         this.recruit = recruit;
     }
 
     public BartSimpsonUnit(int numTimesSpawned, boolean distract, boolean recruit) {
-        super('B', "Bart Simpson", "Red", 100.0, 0.0, 25.0, 0.0, 0, 5, 5, 1, 0);
+        super('B', "Bart Simpson", "Red", 100.0, 0.0, 25.0, 0.0, 0, 5, 5, 1, 0, 0);
         this.numTimesSpawned = numTimesSpawned;
         this.distract = distract;
         this.recruit = recruit;
@@ -97,7 +98,7 @@ public class BartSimpsonUnit extends Recruiter {
     public BartSimpsonUnit spawn() {
         if (this.canSpawn()) {
             numTimesSpawned++;
-            return new BartSimpsonUnit('b', "Bart Simpson", "Blue", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, true, true);
+            return new BartSimpsonUnit('b', "Bart Simpson", "Blue", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, 0,true, true);
         }
 
         return null;

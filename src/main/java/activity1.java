@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class activity1 {
@@ -5,9 +6,17 @@ public class activity1 {
     public static void main(String[] args) {
 
         Scanner scnr = new Scanner(System.in);
-        boolean isPassword = false;
-        String password = "asd";
+
+        String password = "asd"; 
         String enteredPassword = "";
+        
+        do {
+            enteredPassword = scnr.nextLine();
+        }
+        while(!enteredPassword.equals(password));
+        /*
+
+
         String message = "";
 
         // Can check the condition by itself without the boolean.
@@ -19,6 +28,7 @@ public class activity1 {
                 isPassword = true;
             }
         }
+        */
 
 
         /**
@@ -28,7 +38,7 @@ public class activity1 {
         }
         */
 
-
+        scnr.close();
     }
 
 }

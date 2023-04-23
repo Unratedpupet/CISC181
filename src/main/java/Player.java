@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 /**
@@ -15,10 +16,10 @@ public class Player {
     private boolean isTurn;
     private Team team;
 
-    public Player (int playerNumber, boolean isTurn, Team unit) {
+    public Player (int playerNumber, boolean isTurn, Team team) {
         this.playerNumber = playerNumber;
         this.isTurn = isTurn;
-        this.team = unit;
+        this.team = team;
     }
 
     public Player (int playerNumber, Team team) {
