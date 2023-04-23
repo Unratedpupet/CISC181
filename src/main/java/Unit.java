@@ -149,4 +149,6 @@ public abstract class Unit {
     public String toString(){
         return teamColor + " " + symbol;
     }
+
+    public abstract boolean canSpawn();
 }

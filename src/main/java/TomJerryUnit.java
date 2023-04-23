@@ -93,4 +93,6 @@ public class TomJerryUnit extends Attacker {
         return tj;
     }
 
+
+    public boolean canSpawn() { return true; }
 }
