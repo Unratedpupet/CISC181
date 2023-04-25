@@ -93,4 +93,8 @@ public class TomJerryUnit extends Attacker {
         TomJerryUnit tj = new TomJerryUnit('t', "Tom & Jerry", "Blu", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, true, true, false);
         return tj;
     }
+
+    public boolean canSpawn() {
+        return true;
+    }
 }

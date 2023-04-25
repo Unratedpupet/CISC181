@@ -38,6 +38,7 @@ public class BoardSquare {
         this.empty = false;
         this.unit = unit;
     }
+    
     public Unit removeUnit() {
         Unit tempUnit = unit;
         this.unit = null;
@@ -47,12 +48,7 @@ public class BoardSquare {
 
     @Override
     public String toString() {
-        if (empty) {
-            return "-------";
-        }
-        else {
-            return "-" + unit.toString() + "-";
-        }
+        return isEmpty() ? "-------" : "-" + unit.toString() + "-";
     }
 
 }

@@ -54,6 +54,7 @@ public class Game {
      * Changes the players turn
      */
     public void changeTurn() {
+        
         playerOne.setTurn(!playerOne.getTurn());
         playerTwo.setTurn(!playerTwo.getTurn());
     }
