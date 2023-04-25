@@ -7,6 +7,9 @@ public class ActionRecruit extends Action{
         super(game, fromSquareRowIndex, fromSquareColIndex, toSquareRowIndex, toSquareColIndex);
     }
 
+    /**
+     * This method recruits another unit to the team.
+     */
     public void performAction() {
         // Gets the board
         BoardSquare[][] squares = game.getBoardSquares();
