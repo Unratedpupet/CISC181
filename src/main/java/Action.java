@@ -1,10 +1,10 @@
 public abstract class Action {
 
-    private Game game;
-    private int fromSquareRowIndex;
-    private int fromSquareColIndex;
-    private int toSquareRowIndex;
-    private int toSquareColIndex;
+    protected Game game;
+    protected int fromSquareRowIndex;
+    protected int fromSquareColIndex;
+    protected int toSquareRowIndex;
+    protected int toSquareColIndex;
 
     // Constructor
     public Action(
