@@ -150,4 +150,14 @@ public abstract class Unit {
     public String toString(){
         return teamColor + " " + symbol;
     }
+
+    public abstract boolean canSpawn();
+
+    public boolean validSpawnPath(int startRow, int startCol, int targetRow, int targetCol){
+        return true;
+    }
+
+    public boolean validMovePath(int startRow, int startCol, int targetRow, int targetCol) {
+        return true;
+    }
 }
