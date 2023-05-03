@@ -84,10 +84,9 @@ public class Game {
      * @return - Boolean value if there is a winner.
      */
     public boolean isAWinner() {
-        if (playerOne.getTeam().getTeamUnits().size() <= 0) {
-            return true;
-        }
-        else return playerTwo.getTeam().getTeamUnits().size() <= 0;
+        return 
+            playerOne.getTeam().getTeamUnits().size() == 0 ^
+            playerTwo.getTeam().getTeamUnits().size() == 0;
     }
 
     /**
@@ -96,14 +95,7 @@ public class Game {
      */
     public Player getWinner() {
         if (isAWinner()) {
-            if (
-                    playerOne.getTeam().getTeamUnits().size() > playerTwo.getTeam().getTeamUnits().size()
-            ) {
-                System.out.println("Player One Wins");
-                return playerOne;
-            }
-            System.out.println("Player Two Wins!");
-            return playerTwo;
+            return playerOne.getTeam().getTeamUnits().size() == 0 ? playerOne : playerTwo;
         }
         return null;
     }

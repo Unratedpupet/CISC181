@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TextView",
+            "request": "launch",
+            "mainClass": "TextView",
+            "projectName": "CISC181_9a4c5708"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"

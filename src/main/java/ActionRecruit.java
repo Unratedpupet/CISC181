@@ -19,7 +19,6 @@ public class ActionRecruit extends Action{
         //Removes unit from the opposite team, and adds it to current team
         opposingUnit.setTeamColor(recruitingUnit.teamColor);
 
-
         game.changeTurn();
     }
 

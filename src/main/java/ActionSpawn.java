@@ -20,7 +20,7 @@ public class ActionSpawn extends Action{
         // Unit on From square calls spawn method
         Unit spawnedUnit = fromSquare.getUnit().spawn();
         // Add unit that was spawned to the current team.
-        spawnedUnit.setTeamColor(fromSquare.getUnit().getTeamColor());
+        game.getCurrentPlayer().getTeam().addUnitsToTeam(spawnedUnit);
         //Put the spawned unit on the To square
         toSquare.setUnit(spawnedUnit);
 

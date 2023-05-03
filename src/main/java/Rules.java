@@ -14,12 +14,8 @@ public class Rules {
         BoardSquare actionSquare = game.getGameBoard().getSquares()[actionRow][actionCol];
         BoardSquare targetSquare = game.getGameBoard().getSquares()[receiveRow][receiveCol];
         if (game.getGameBoard().inBounds(actionRow, actionCol) && game.getGameBoard().inBounds(receiveRow, receiveCol)){
-            if (actionSquare.isEmpty()) {
-                return false;
-            }
-            if (!actionSquare.getUnit().getTeamColor().equals(currentTeam)) {
-                return false;
-            }
+            if (actionSquare.isEmpty()) { return false; }
+            if (!actionSquare.getUnit().getTeamColor().equals(currentTeam)) { return false; }
             if (actionSquare.getUnit().teamColor.equals(currentTeam)) {
                 switch (action) {
                     case 'M':
