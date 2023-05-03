@@ -1,3 +1,13 @@
+/**
+ * <h1>ActionRecruit</h1>
+ * <h2>CISC 181-052L Spring 2023</h2>
+ * <h3>University of Delaware</h3>
+ * Extends the Action class and implements the Recruit method.
+ * @author Zach Phillips and Leo Chan
+ * @version 1.0
+ * @since 2023-04-18
+ */
+
 public class ActionRecruit extends Action{
 
     public ActionRecruit(
@@ -7,6 +17,9 @@ public class ActionRecruit extends Action{
         super(game, fromSquareRowIndex, fromSquareColIndex, toSquareRowIndex, toSquareColIndex);
     }
 
+    /**
+     * This method recruits another unit to the team.
+     */
     public void performAction() {
         // Gets the board
         BoardSquare[][] squares = game.getBoardSquares();
