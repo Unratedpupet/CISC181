@@ -57,6 +57,6 @@ public class ActionAttack extends Action{
             }
         }
 
-        game.changeTurn();
+        game.ChangeTurn();
     }
 }
