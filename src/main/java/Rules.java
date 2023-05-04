@@ -39,9 +39,15 @@ public class Rules {
             if (actionSquare.getUnit().teamColor.equals(currentTeam)) {
                 switch (action) {
                     case 'M':
-                        return actionSquare.getUnit().validMovePath(actionRow, actionCol, receiveRow, receiveCol);
+                        if (targetSquare.isEmpty()) {
+                            return actionSquare.getUnit().validMovePath(actionRow, actionCol, receiveRow, receiveCol);
+                        }
+                        break;
                     case 'S':
-                        return actionSquare.getUnit().validSpawnPath(actionRow, actionCol, receiveRow, receiveCol);
+                        if (targetSquare.isEmpty()) {
+                            return actionSquare.getUnit().validSpawnPath(actionRow, actionCol, receiveRow, receiveCol);
+                        }
+                        break;
                     case 'R':
                         if (actionSquare.getUnit() instanceof Recruiter) {
                             if (!targetSquare.isEmpty()) {
@@ -49,6 +55,7 @@ public class Rules {
                                 return rUnit.validRecruitPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }
+                        break;
                     case 'A':
                         if (actionSquare.getUnit() instanceof Attacker) {
                             if (!targetSquare.isEmpty()) {
@@ -56,6 +63,7 @@ public class Rules {
                                 return aUnit.validAttackPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }
+                        break;
                 }
             }
             

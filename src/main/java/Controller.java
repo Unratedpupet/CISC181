@@ -91,12 +91,16 @@ public class Controller {
         switch (action) {
             case 'M':
                 new ActionMove(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
             case 'A':
                 new ActionAttack(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
             case 'R':
                 new ActionRecruit(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
             case 'S':
                 new ActionSpawn(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
         }
     }
 
