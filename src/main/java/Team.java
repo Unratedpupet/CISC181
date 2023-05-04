@@ -53,9 +53,7 @@ public class Team {
 
     public String toString() {
         String returnString = "Team " + teamColor + " Units : \n";
-        for (int i = 0; i < units.size(); i++) {
             returnString += units;
-        }
         return returnString;
     }
 

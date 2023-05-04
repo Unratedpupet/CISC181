@@ -20,7 +20,7 @@ public class Game {
     private GameBoard initializeGameBoard(int numRows, int numColumns) {
         GameBoard GB = new GameBoard(numRows, numColumns);
         placeUnits(GB, this.playerOne);
-        placeUnits(GB, this.playerOne);
+        placeUnits(GB, this.playerTwo);
         return GB;
     }
 

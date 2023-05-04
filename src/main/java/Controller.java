@@ -54,15 +54,11 @@ public class Controller {
         TomJerryUnit tj2 = new TomJerryUnit();
         tj2.setTeamColor("Red");
 
-
-        piecesTeamB.add(bs2);
-        piecesTeamB.add(tj2);
-
-
         // Create a team object
         Team teamB = new Team("Red",piecesTeamB);
         Player playerTwo = new Player(2, false, teamB);
-
+        teamB.addUnitsToTeam(bs2);
+        teamB.addUnitsToTeam(tj2);
 
         // Create an instance of the game
         return new Game(8, 8, playerOne, playerTwo);
