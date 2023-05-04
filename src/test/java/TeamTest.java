@@ -38,7 +38,7 @@ public class TeamTest {
         Team teamB = new Team("Red",unitsTeamB);
         // add a Unit bart to team B
         teamB.addUnitsToTeam(bart);
-        //check that bart color was changed to Red
+        //check that bart color was Changed to Red
         assertEquals("Red",bart.getTeamColor());
 
         // check team B units

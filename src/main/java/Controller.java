@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * <h2>CISC 181-052L Spring 2023</h2>
  * <h3>University of Delaware</h3>
  * The Controller class is the user input gameplay class for the game.
- * @author Zach Phillips and Leo Chan
+ * @author Zach Phillips and Leo Chen
  * @version 1.0
  * @since 2023-04-14
  */
@@ -54,15 +54,11 @@ public class Controller {
         TomJerryUnit tj2 = new TomJerryUnit();
         tj2.setTeamColor("Red");
 
-
-        piecesTeamB.add(bs2);
-        piecesTeamB.add(tj2);
-
-
         // Create a team object
         Team teamB = new Team("Red",piecesTeamB);
         Player playerTwo = new Player(2, false, teamB);
-
+        teamB.addUnitsToTeam(bs2);
+        teamB.addUnitsToTeam(tj2);
 
         // Create an instance of the game
         return new Game(8, 8, playerOne, playerTwo);
