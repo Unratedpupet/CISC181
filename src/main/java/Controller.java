@@ -87,12 +87,16 @@ public class Controller {
         switch (action) {
             case 'M':
                 new ActionMove(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
             case 'A':
                 new ActionAttack(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
             case 'R':
                 new ActionRecruit(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
             case 'S':
                 new ActionSpawn(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                break;
         }
     }
 
@@ -104,6 +108,7 @@ public class Controller {
                 game, textView.getFromRow(), textView.getFromCol(),
                 textView.getToRow(), textView.getToCol(), textView.getAction())
         ) {
+
             textView.getNextPlayersAction(game);
             Rules.checkValidAction(
                     game, textView.getFromRow(), textView.getFromCol(),
@@ -120,9 +125,13 @@ public class Controller {
         System.out.println(game);
 
         //if not isAWinner(), repeat playGame() **recursion??** or while loop?
+        if (!game.isAWinner()) {
+            playGame();
+        }
+        else {
+            textView.printEndOfGame(game);
 
-        //When game over, game.getWinner()
-
+        }
 
     }
 

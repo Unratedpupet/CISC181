@@ -29,8 +29,11 @@ public class ActionRecruit extends Action{
         //Gets the units
         Unit opposingUnit = toSquare.getUnit();
         Unit recruitingUnit = fromSquare.getUnit();
+        //Gets the teams
+
         //Removes unit from the opposite team, and adds it to current team
-        opposingUnit.setTeamColor(recruitingUnit.teamColor);
+        game.getOpponentPlayer().getTeam().removeUnitsFromTeam(opposingUnit);
+        game.getCurrentPlayer().getTeam().addUnitsToTeam(opposingUnit);
 
         game.changeTurn();
     }
