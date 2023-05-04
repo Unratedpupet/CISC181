@@ -47,13 +47,16 @@ public class ActionAttack extends Action{
             }
             //Removes BartSimpsonUnit from team and board.
             else {
-                defendingTeam.removeUnitsFromTeam(defendingUnit);
+                defendingTeam.removeUnitsFromTeam(toSquare.removeUnit());
             }
 
             //Moves attacking unit to the 'to square'
             if (toSquare.isEmpty()) {
+                fromSquare.removeUnit();
                 toSquare.setUnit(attackingUnit);
             }
         }
+
+        game.changeTurn();
     }
 }
