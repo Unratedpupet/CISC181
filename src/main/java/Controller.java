@@ -108,6 +108,7 @@ public class Controller {
                 game, textView.getFromRow(), textView.getFromCol(),
                 textView.getToRow(), textView.getToCol(), textView.getAction())
         ) {
+
             textView.getNextPlayersAction(game);
             Rules.checkValidAction(
                     game, textView.getFromRow(), textView.getFromCol(),
@@ -124,9 +125,13 @@ public class Controller {
         System.out.println(game);
 
         //if not isAWinner(), repeat playGame() **recursion??** or while loop?
+        if (!game.isAWinner()) {
+            playGame();
+        }
+        else {
+            textView.printEndOfGame(game);
 
-        //When game over, game.getWinner()
-
+        }
 
     }
 

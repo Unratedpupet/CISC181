@@ -2,6 +2,16 @@ import java.util.Scanner;
 
 import javax.sound.midi.Soundbank;
 
+/**
+ * <h1>TextView</h1>
+ * <h2>CISC 181-052L Spring 2023</h2>
+ * <h3>University of Delaware</h3>
+ * The TextView class provide a text based interface to the players so that they can play the game.
+ * @author Zach Phillips and Leo Chan
+ * @version 1.0
+ * @since 2023-04-14
+ */
+
 public class TextView {
    private int fromRow;
    private int fromCol;
@@ -50,6 +60,11 @@ public class TextView {
       this.action = action;
    }
 
+   /**
+    * This method gets the char value of the action that the Player wants to take.
+    * @param scnr - Input value
+    * @return - char - Returns the char value of the Player action
+    */
    public static char getUsersNextActionType(Scanner scnr) {
       char action = ' ';
       do {
@@ -62,6 +77,11 @@ public class TextView {
       return action;
    }
 
+   /**
+    * This method checks to make sure that the Player entered a valid int value to be used for row/col index
+    * @param scnr - Input value
+    * @return - int - The validated int value.
+    */
    public static int getValidInt(Scanner scnr) {
       int in = 0, mode = 0;
       do {
@@ -75,6 +95,11 @@ public class TextView {
       return in;
    }
 
+   /**
+    * This method takes in the game that is being played, the user action, and the row/col indexes
+    * of the from and to squares
+    * @param game - Game - The Game that is being played.
+    */
    public void getNextPlayersAction(Game game) {
       Scanner scnr = new Scanner(System.in);
       action = getUsersNextActionType(scnr);
@@ -92,8 +117,16 @@ public class TextView {
       while (toCol > game.getGameBoard().getNumColumns() - 1) { toCol = getValidInt(scnr); }
    }
 
+   /**
+    * This method updates the graphical view of the game.
+    * @param game - Game - The Game that is being played.
+    */
    public void updateView(Game game) { System.out.println(game.toString()); }
 
+   /**
+    * This method prints the end of the game
+    * @param game - Game - The Game that is being played.
+    */
    public void printEndOfGame(Game game) { System.out.println("Game over. Winner : " + game.getWinner()); }
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
