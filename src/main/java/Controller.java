@@ -1,10 +1,24 @@
 import java.util.ArrayList;
 
+/**
+ * <h1>Controller</h1>
+ * <h2>CISC 181-052L Spring 2023</h2>
+ * <h3>University of Delaware</h3>
+ * The Controller class is the user input gameplay class for the game.
+ * @author Zach Phillips and Leo Chan
+ * @version 1.0
+ * @since 2023-04-14
+ */
+
 public class Controller {
 
     private Game game;
     private TextView textView;
 
+    /**
+     * This method sets up the game that was supplied by the instructor.
+     * @return - Game - Returns the game to be played.
+     */
     public Game setUpGameModel(){
         // Create 4 pieces for team A
         // Load the pieces in an ArrayList
@@ -57,7 +71,7 @@ public class Controller {
     public Controller() {
         this.game = setUpGameModel();
         this.textView = new TextView();
-        textView.updateView();
+        textView.updateView(game);
     }
 
     /**
@@ -88,22 +102,24 @@ public class Controller {
 
     public void playGame() {
         //TODO Implement playGame algorithm
-        /**
-         * calls getNextPlayersAction
-         * calls Rules.checkValidAction  to check if the user’s Action selection is valid
-         * if the action isn’t valid repeat Step a) and b) until it is
-         * calls carryOutAction
-         * prints the game object
-         * if the game has not ended repeat Steps a) through d)
-         * prints a message that the game has ended and which Player (if any) has won
-         */
 
         // Need a while statement that runs step a and step b until the action is valid per checkValidAction()
-        //textView.getNextPlayersAction();
-        //Rules.checkValidAction();
+        while (!Rules.checkValidAction(
+                game, textView.getFromRow(), textView.getFromCol(),
+                textView.getToRow(), textView.getToCol(), textView.getAction())
+        ) {
+            textView.getNextPlayersAction(game);
+            Rules.checkValidAction(
+                    game, textView.getFromRow(), textView.getFromCol(),
+                    textView.getToRow(), textView.getToCol(), textView.getAction()
+            );
+        }
 
-        //Once the action is valid, break while loop
-        //call carryOutAction()
+        carryOutAction(
+                textView.getFromRow(), textView.getFromCol(),
+                textView.getToRow(), textView.getToCol(), textView.getAction()
+        );
+
 
         System.out.println(game);
 

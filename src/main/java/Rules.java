@@ -1,5 +1,25 @@
+/**
+ * <h1>Rules</h1>
+ * <h2>CISC 181-052L Spring 2023</h2>
+ * <h3>University of Delaware</h3>
+ * The Rules class checks to see if the action that the Player wants to do is valid.
+ * @author Zach Phillips and Leo Chan
+ * @version 1.0
+ * @since 2023-04-14
+ */
+
 public class Rules {
 
+    /**
+     * This method checks to see if the Player action is valid and returns a boolean representation
+     * @param game - Game object to check
+     * @param actionRow - The BoardSquare Row Index that the Player is on.
+     * @param actionCol - The BoardSquare Column Index that the Player is on.
+     * @param receiveRow - The BoardSquare Row Index that the Player wants to take the action on.
+     * @param receiveCol - The BoardSquare Row Column that the Player wants to take the action on.
+     * @param action - The action that the Player wants to take based on the set criteria of what actions are available
+     * @return - boolean - Returns the boolean value of the result.
+     */
     public static boolean checkValidAction(Game game, int actionRow, int actionCol, int receiveRow, int receiveCol, char action) {
        
         /**
