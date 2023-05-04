@@ -1,13 +1,11 @@
 import java.util.Scanner;
 
-import javax.sound.midi.Soundbank;
-
 /**
  * <h1>TextView</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
  * <h3>University of Delaware</h3>
  * The TextView class provide a text based interface to the players so that they can play the game.
- * @author Zach Phillips and Leo Chan
+ * @author Zach Phillips and Leo Chen
  * @version 1.0
  * @since 2023-04-14
  */
