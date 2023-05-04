@@ -3,7 +3,7 @@
  * <h2>CISC 181-052L Spring 2023</h2>
  * <h3>University of Delaware</h3>
  * The Rules class checks to see if the action that the Player wants to do is valid.
- * @author Zach Phillips and Leo Chan
+ * @author Zach Phillips and Leo Chen
  * @version 1.0
  * @since 2023-04-14
  */

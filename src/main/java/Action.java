@@ -4,7 +4,7 @@
  * <h3>University of Delaware</h3>
  * Abstract class the holds the baseline
  * action functions.
- * @author Zach Phillips and Leo Chan
+ * @author Zach Phillips and Leo Chen
  * @version 1.0
  * @since 2023-04-18
  */
