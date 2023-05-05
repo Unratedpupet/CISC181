@@ -95,7 +95,7 @@ public class Game {
      */
     public Player getWinner() {
         if (isAWinner()) {
-            return playerOne.getTeam().getTeamUnits().size() == 0 ? playerOne : playerTwo;
+            return playerOne.getTeam().getTeamUnits().size() == 0 ? playerTwo : playerOne;
         }
         return null;
     }
