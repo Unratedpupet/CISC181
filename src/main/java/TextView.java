@@ -125,7 +125,7 @@ public class TextView {
     * This method prints the end of the game
     * @param game - Game - The Game that is being played.
     */
-   public void printEndOfGame(Game game) { System.out.println("Game over. Winner : " + game.getWinner()); }
+   public void printEndOfGame(Game game) { System.out.println("Game over. Winner : Player " + game.getWinner().getPlayerNumber()); }
    public static void main(String[] args) {
       Scanner scnr = new Scanner(System.in);
       System.out.println(getUsersNextActionType(scnr));

@@ -101,8 +101,6 @@ public class Controller {
     }
 
     public void playGame() {
-        //TODO Implement playGame algorithm
-
         // Need a while statement that runs step a and step b until the action is valid per checkValidAction()
         while (!Rules.checkValidAction(
                 game, textView.getFromRow(), textView.getFromCol(),
