@@ -54,5 +54,9 @@ public class Player {
         this.team = team;
     }
 
+    @Override
+    public String toString() {return "Player " + playerNumber; }
+
+
 
 }
