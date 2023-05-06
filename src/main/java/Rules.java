@@ -45,6 +45,12 @@ public class Rules {
                         break;
                     case 'S':
                         if (targetSquare.isEmpty()) {
+                            if (targetSquare.getUnit() instanceof BartSimpsonUnit) {
+                                BartSimpsonUnit bUnit = (BartSimpsonUnit) targetSquare.getUnit();
+                                if (bUnit.getNumTimesSpawned() < bUnit.getMAX_NUM_SPAWNED()) {
+                                    return actionSquare.getUnit().validSpawnPath(actionRow, actionCol, receiveRow, receiveCol); 
+                                }
+                            }
                             return actionSquare.getUnit().validSpawnPath(actionRow, actionCol, receiveRow, receiveCol);
                         }
                         break;
