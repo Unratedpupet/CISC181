@@ -42,7 +42,6 @@ public class ActionAttack extends Action{
                 if (defendingUnit.getHealth() <= 0.0) {
                     //Removes unit from opposing team by removing from the to square.
                     defendingTeam.removeUnitsFromTeam(toSquare.removeUnit());
-
                 }
             }
             //Removes BartSimpsonUnit from team and board.
@@ -57,6 +56,6 @@ public class ActionAttack extends Action{
             }
         }
 
-        game.ChangeTurn();
+        game.changeTurn();
     }
 }

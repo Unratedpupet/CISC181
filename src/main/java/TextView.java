@@ -68,7 +68,7 @@ public class TextView {
       do {
          System.out.println("M, S, R, or A?");
          if (scnr.hasNext()){
-            action = scnr.nextLine().charAt(0);
+            action = scnr.nextLine().toUpperCase().charAt(0);
          }
       }
       while (action != 'M' && action != 'S' && action != 'R' && action != 'A');

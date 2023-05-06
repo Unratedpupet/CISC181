@@ -34,7 +34,7 @@ public class ActionSpawn extends Action{
         //Put the spawned unit on the To square
         toSquare.setUnit(spawnedUnit);
 
-        game.ChangeTurn();
+        game.changeTurn();
     }
 
 }

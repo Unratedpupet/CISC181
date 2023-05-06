@@ -55,7 +55,7 @@ public class GameTest {
         assertTrue(ourGame.isTurn(p1));
         assertFalse(ourGame.isTurn(p2));
 
-        ourGame.ChangeTurn();
+        ourGame.changeTurn();
 
         assertEquals(p2,ourGame.getCurrentPlayer());
         assertEquals(p1,ourGame.getOpponentPlayer());

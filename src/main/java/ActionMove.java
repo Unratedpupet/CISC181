@@ -33,7 +33,7 @@ public class ActionMove extends Action{
         //Sets the from square unit to the to square
         toSquare.setUnit(fromUnit);
 
-        game.ChangeTurn();
+        game.changeTurn();
     }
 
 }

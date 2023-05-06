@@ -35,7 +35,7 @@ public class ActionRecruit extends Action{
         game.getOpponentPlayer().getTeam().removeUnitsFromTeam(opposingUnit);
         game.getCurrentPlayer().getTeam().addUnitsToTeam(opposingUnit);
 
-        game.ChangeTurn();
+        game.changeTurn();
     }
 
 
