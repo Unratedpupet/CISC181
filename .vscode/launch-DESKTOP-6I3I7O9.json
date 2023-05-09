@@ -1,0 +1,140 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Controller",
+            "request": "launch",
+            "mainClass": "Controller",
+            "projectName": "CISC181_9a4c5708"
+        },
+        {
+            "type": "java",
+            "name": "TextView",
+            "request": "launch",
+            "mainClass": "TextView",
+            "projectName": "CISC181_9a4c5708"
+        },
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Case",
+            "request": "launch",
+            "mainClass": "Case",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "CellPhone",
+            "request": "launch",
+            "mainClass": "CellPhone",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "CellPhoneCase",
+            "request": "launch",
+            "mainClass": "CellPhoneCase",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Lab0",
+            "request": "launch",
+            "mainClass": "Lab0",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Lab0J",
+            "request": "launch",
+            "mainClass": "Lab0J",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Lab1",
+            "request": "launch",
+            "mainClass": "Lab1",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Lab1Practice",
+            "request": "launch",
+            "mainClass": "Lab1Practice",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Lab2",
+            "request": "launch",
+            "mainClass": "Lab2",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Lab2Practice",
+            "request": "launch",
+            "mainClass": "Lab2Practice",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "PracticeSet3",
+            "request": "launch",
+            "mainClass": "PracticeSet3",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "PracticeSet4",
+            "request": "launch",
+            "mainClass": "PracticeSet4",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "PracticeSet5",
+            "request": "launch",
+            "mainClass": "PracticeSet5",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Practiceset2",
+            "request": "launch",
+            "mainClass": "Practiceset2",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "Recursion",
+            "request": "launch",
+            "mainClass": "Recursion",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "activity1",
+            "request": "launch",
+            "mainClass": "activity1",
+            "projectName": "Lab0"
+        },
+        {
+            "type": "java",
+            "name": "activityWeek3",
+            "request": "launch",
+            "mainClass": "activityWeek3",
+            "projectName": "Lab0"
+        }
+    ]
+}

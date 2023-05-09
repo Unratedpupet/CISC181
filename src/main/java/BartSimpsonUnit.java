@@ -104,4 +104,13 @@ public class BartSimpsonUnit extends Recruiter {
         return null;
     }
 
+
+
+    public boolean validSpawnPath(int startRow, int startCol, int targetRow, int targetCol) {
+        return true;
+    }
+
+    public boolean validMovePath(int startRow, int startCol, int targetRow, int targetCol) {
+        return true;
+    }
 }
