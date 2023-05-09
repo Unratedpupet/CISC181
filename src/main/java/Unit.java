@@ -153,11 +153,7 @@ public abstract class Unit {
 
     public abstract boolean canSpawn();
 
-    public boolean validSpawnPath(int startRow, int startCol, int targetRow, int targetCol){
-        return true;
-    }
+    abstract boolean validSpawnPath(int startRow, int startCol, int targetRow, int targetCol);
 
-    public boolean validMovePath(int startRow, int startCol, int targetRow, int targetCol) {
-        return true;
-    }
+    abstract boolean validMovePath(int startRow, int startCol, int targetRow, int targetCol);
 }

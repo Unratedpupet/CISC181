@@ -45,6 +45,6 @@ public abstract class Recruiter extends Unit{
      * @param unitColIndex - unit location colum index
      * @return - Boolean value if the path is valid or not.
      */
-    //int bsRowIndex, int bsColIndex, int unitRowIndex, int unitColIndex
-    abstract boolean validRecruitPath();
+
+    abstract boolean validRecruitPath(int bsRowIndex, int bsColIndex, int unitRowIndex, int unitColIndex);
 }

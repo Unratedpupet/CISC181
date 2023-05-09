@@ -107,10 +107,17 @@ public class BartSimpsonUnit extends Recruiter {
 
 
     public boolean validSpawnPath(int startRow, int startCol, int targetRow, int targetCol) {
+        // TODO: 5/9/2023 implement method
         return true;
     }
 
     public boolean validMovePath(int startRow, int startCol, int targetRow, int targetCol) {
+        // TODO: 5/9/2023 implement method
+        return true;
+    }
+
+    public boolean validRecruitPath(int startRow, int startCol, int targetRow, int targetCol) {
+        // TODO: 5/9/2023 implement method
         return true;
     }
 }

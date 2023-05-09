@@ -48,7 +48,7 @@ public abstract class Attacker extends Unit {
      * @return - Boolean value if the path is valid or not.
      */
 
-    //int bsRowIndex, int bsColIndex, int unitRowIndex, int unitColIndex
-    abstract boolean validAttackPath();
+
+    abstract boolean validAttackPath(int bsRowIndex, int bsColIndex, int unitRowIndex, int unitColIndex);
 
 }
