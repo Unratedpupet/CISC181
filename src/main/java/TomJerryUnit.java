@@ -101,10 +101,10 @@ public class TomJerryUnit extends Attacker {
 
     /**
      * This method checks to see if the spawn path is valid.
-     * @param fromRow - Unit move start row index
-     * @param fromCol - Unit move start col index
-     * @param toRow - Unit move end row index
-     * @param toCol - Unit move end col index
+     * @param fromRowIndex - Unit move start row index
+     * @param fromColIndex - Unit move start col index
+     * @param toRowIndex - Unit move end row index
+     * @param toColIndex - Unit move end col index
      * @return - boolean - Allowed to spawn anywhere, so always returns true.
      */
     public boolean validSpawnPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
@@ -124,7 +124,7 @@ public class TomJerryUnit extends Attacker {
     }
 
     public boolean validAttackPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
-        // TODO: 5/9/2023 check to see if this works
+
         //Across the row, but not up and down a column.
         if (fromRowIndex == toRowIndex && fromColIndex != toColIndex) {
             return true;
