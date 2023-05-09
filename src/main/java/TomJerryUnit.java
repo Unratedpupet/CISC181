@@ -1,3 +1,4 @@
+import static java.lang.Math.abs;
 
 /**
  * <h1>TomJerryUnit</h1>
@@ -124,12 +125,15 @@ public class TomJerryUnit extends Attacker {
 
     public boolean validAttackPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
         // TODO: 5/9/2023 check to see if this works
-        if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
+        //Across the row, but not up and down a column.
+        if (fromRowIndex == toRowIndex && fromColIndex != toColIndex) {
             return true;
         }
-        else if (fromRowIndex == toRowIndex && fromColIndex != toColIndex) {
+        // Two spaces up or down the column, but no spaces across the row.
+        else if (fromColIndex == toColIndex && (fromRowIndex - toRowIndex == abs(2))) {
             return true;
         }
+
         else {
             return false;
         }
