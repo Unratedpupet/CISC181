@@ -1,3 +1,4 @@
+import static java.lang.Math.abs;
 
 /**
  * <h1>TomJerryUnit</h1>
@@ -106,18 +107,42 @@ public class BartSimpsonUnit extends Recruiter {
 
 
 
-    public boolean validSpawnPath(int startRow, int startCol, int targetRow, int targetCol) {
-        // TODO: 5/9/2023 implement method
-        return true;
+    public boolean validSpawnPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
+        // TODO: 5/9/2023 check to see if working.
+        //Up and down the column, but no movement across the row.
+        if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
+            return true;
+        }
+        //Only two spaces across the row, no movement up or down column.
+        else if ((fromColIndex - toColIndex == abs(2)) && fromRowIndex == toRowIndex) {
+            return true;
+        }
+        return false;
     }
 
-    public boolean validMovePath(int startRow, int startCol, int targetRow, int targetCol) {
-        // TODO: 5/9/2023 implement method
-        return true;
+    public boolean validMovePath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
+        // TODO: 5/9/2023 check to see if working.
+        //Up and down the column, but no movement across the row.
+        if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
+            return true;
+        }
+        //Only two spaces across the row, no movement up or down column.
+        else if ((fromColIndex - toColIndex == abs(2)) && fromRowIndex == toRowIndex) {
+            return true;
+        }
+        return false;
     }
 
-    public boolean validRecruitPath(int startRow, int startCol, int targetRow, int targetCol) {
-        // TODO: 5/9/2023 implement method
-        return true;
+    public boolean validRecruitPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
+        // TODO: 5/9/2023 check to see if working.
+        //Up and down the column, but no movement across the row.
+        if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
+            return true;
+        }
+        //Only two spaces across the row, no movement up or down column.
+        else if ((fromColIndex - toColIndex == abs(2)) && fromRowIndex == toRowIndex) {
+            return true;
+        }
+        return false;
     }
 }

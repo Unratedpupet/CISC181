@@ -107,19 +107,19 @@ public class TomJerryUnit extends Attacker {
      * @param toCol - Unit move end col index
      * @return - boolean - Allowed to spawn anywhere, so always returns true.
      */
-    public boolean validSpawnPath(int fromRow, int fromCol, int toRow, int toCol) {
+    public boolean validSpawnPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
         return true;
     }
 
     /**
      * This method checks to see if the move path is valid.
-     * @param fromRow - Unit move start row index
-     * @param fromCol - Unit move start col index
-     * @param toRow - Unit move end row index
-     * @param toCol - Unit move end col index
+     * @param fromRowIndex - Unit move start row index
+     * @param fromColIndex - Unit move start col index
+     * @param toRowIndex - Unit move end row index
+     * @param toColIndex - Unit move end col index
      * @return - boolean - Allowed to move anywhere, so always returns true.
      */
-    public boolean validMovePath(int fromRow, int fromCol, int toRow, int toCol) {
+    public boolean validMovePath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
         return true;
     }
 
