@@ -108,7 +108,7 @@ public class BartSimpsonUnit extends Recruiter {
 
 
     public boolean validSpawnPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
-        // TODO: 5/9/2023 check to see if working.
+
         //Up and down the column, but no movement across the row.
         if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
             return true;
@@ -121,7 +121,7 @@ public class BartSimpsonUnit extends Recruiter {
     }
 
     public boolean validMovePath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
-        // TODO: 5/9/2023 check to see if working.
+
         //Up and down the column, but no movement across the row.
         if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
             return true;
@@ -134,7 +134,7 @@ public class BartSimpsonUnit extends Recruiter {
     }
 
     public boolean validRecruitPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
-        // TODO: 5/9/2023 check to see if working.
+
         //Up and down the column, but no movement across the row.
         if (fromColIndex == toColIndex && fromRowIndex != toRowIndex) {
             return true;
