@@ -63,6 +63,11 @@ class GameEventNode {
     public void setNext(GameEventNode next) {
         this.next = next;
     }
+
+    // Makes getting the eventType for the second pop method shorter
+    public String getEventType() {
+        return gameState.getEventType();
+    }
 }
 
 public class GameEventsLinkedList {
@@ -74,6 +79,10 @@ public class GameEventsLinkedList {
         size = 0;
     }
 
+    public GameEventNode getHead() {
+        return head;
+    }
+
     public int getSize() {
         return this.size;
     }
@@ -82,50 +91,44 @@ public class GameEventsLinkedList {
         return head == null && size == 0;
     }
 
-    public void add(GameEventNode node) {
+    public void push(GameEventNode node) {
         if (isEmpty()) {
             head = node;
-        }
-        else {
-            GameEventNode current = head;
-            while (current.getNext() != null) {
-                current = current.getNext();
-            }
-            current.setNext(node);
+        } else {
+            node.setNext(head);
+            head = node;
         }
         size++;
     }
 
-    public GameEvent remove(GameEventNode node) {
-        GameEventNode current = head;
-        GameEventNode remove = head;
-        if (isEmpty()) {return null;}
-        else if (head.equals(node)) {
-            head = head.getNext();
-            size--;
-            return remove.getGameState();
-        }
-        while(current.getNext() != null && !current.getNext().equals(node)) {
-            current = current.getNext();
-            remove = current;
-        }
-        current.setNext(current.getNext().getNext());
+    public GameEventNode pop() {
+        if (isEmpty()) { return null; }
+
+        GameEventNode temp = head;
+        head = head.getNext();
         size--;
-        return remove.getGameState();
+        return temp;
     }
-
-    public GameEventsLinkedList extract(String search) {
-        GameEventNode current = head;
-        GameEventsLinkedList match = new GameEventsLinkedList();
-
-        //if (isEmpty()) {return match;}
-        while (current != null) {
-            if (current.getGameState().getEventType().equals(search)) {
-                match.add(new GameEventNode(current.getGameState()));
+    
+    public GameEventsLinkedList pop(String search) {
+        GameEventsLinkedList gell = new GameEventsLinkedList();
+        GameEventNode current;
+        if (!isEmpty()) {
+            current = head;
+            while (current != null) {
+                if (head.getEventType().equals(search)) {
+                    gell.push(new GameEventNode(head.getGameState()));
+                    head = head.getNext();
+                } else if (current.getNext() != null) {
+                    if (current.getNext().getEventType().equals(search)) {
+                        gell.push(new GameEventNode(current.getNext().getGameState()));
+                        current.setNext(current.getNext().getNext()); 
+                    }
+                }
+                current = current.getNext();
             }
-            current = current.getNext();
         }
-        return match;
+        return gell;
     }
 
     public void display() {

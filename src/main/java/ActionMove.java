@@ -3,18 +3,18 @@
  * <h2>CISC 181-052L Spring 2023</h2>
  * <h3>University of Delaware</h3>
  * Extends the Action class and implements the move action.
+ * 
  * @author Zach Phillips and Leo Chen
  * @version 1.0
  * @since 2023-04-18
  */
 
-public class ActionMove extends Action{
+public class ActionMove extends Action {
 
     public ActionMove(
-            Game game, int fromSquareRowIndex, int fromSquareColIndex,
-            int toSquareRowIndex, int toSquareColIndex
-    ) {
-        super(game, fromSquareRowIndex, fromSquareColIndex, toSquareRowIndex, toSquareColIndex);
+            Game game, int fromSquareRow, int fromSquareCol,
+            int toSquareRow, int toSquareCol) {
+        super(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
     }
 
     /**
@@ -26,14 +26,20 @@ public class ActionMove extends Action{
         // Gets the board
         BoardSquare[][] squares = game.getBoardSquares();
         // Sets the from square and the to square.
-        BoardSquare fromSquare = squares[fromSquareRowIndex][fromSquareColIndex];
-        BoardSquare toSquare = squares[toSquareRowIndex][toSquareColIndex];
+        BoardSquare fromSquare = squares[fromSquareRow][fromSquareCol];
+        BoardSquare toSquare = squares[toSquareRow][toSquareCol];
         // Gets the unit from the from square and removes it from that square.
         Unit fromUnit = fromSquare.removeUnit();
-        //Sets the from square unit to the to square
+        // Sets the from square unit to the to square
         toSquare.setUnit(fromUnit);
 
         game.changeTurn();
+    }
+
+    @Override
+    public String toString() {
+        return game.getCurrentPlayer().getTeam().getTeamColor() + " teams " + game.getBoardSquares()[toSquareRow][toSquareCol]
+           .getUnit().getName() + " unit moves from " + fromSquareRow + "," + fromSquareCol + " to " + toSquareRow + "," + toSquareCol;
     }
 
 }

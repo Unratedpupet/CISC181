@@ -11,10 +11,10 @@
 public class ActionRecruit extends Action{
 
     public ActionRecruit(
-            Game game, int fromSquareRowIndex, int fromSquareColIndex,
-            int toSquareRowIndex, int toSquareColIndex
+            Game game, int fromSquareRow, int fromSquareCol,
+            int toSquareRow, int toSquareCol
     ) {
-        super(game, fromSquareRowIndex, fromSquareColIndex, toSquareRowIndex, toSquareColIndex);
+        super(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
     }
 
     /**
@@ -24,8 +24,8 @@ public class ActionRecruit extends Action{
         // Gets the board
         BoardSquare[][] squares = game.getBoardSquares();
         // Sets the from square and the to square.
-        BoardSquare fromSquare = squares[fromSquareRowIndex][fromSquareColIndex];
-        BoardSquare toSquare = squares[toSquareRowIndex][toSquareColIndex];
+        BoardSquare fromSquare = squares[fromSquareRow][fromSquareCol];
+        BoardSquare toSquare = squares[toSquareRow][toSquareCol];
         //Gets the units
         Unit opposingUnit = toSquare.getUnit();
         Unit recruitingUnit = fromSquare.getUnit();

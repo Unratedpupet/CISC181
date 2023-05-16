@@ -11,10 +11,10 @@
 public class ActionSpawn extends Action{
 
     public ActionSpawn(
-            Game game, int fromSquareRowIndex, int fromSquareColIndex,
-            int toSquareRowIndex, int toSquareColIndex
+            Game game, int fromSquareRow, int fromSquareCol,
+            int toSquareRow, int toSquareCol
     ) {
-        super(game, fromSquareRowIndex, fromSquareColIndex, toSquareRowIndex, toSquareColIndex);
+        super(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
     }
 
     /**
@@ -25,8 +25,8 @@ public class ActionSpawn extends Action{
         // Gets the board
         BoardSquare[][] squares = game.getBoardSquares();
         // Sets the from square and the to square.
-        BoardSquare fromSquare = squares[fromSquareRowIndex][fromSquareColIndex];
-        BoardSquare toSquare = squares[toSquareRowIndex][toSquareColIndex];
+        BoardSquare fromSquare = squares[fromSquareRow][fromSquareCol];
+        BoardSquare toSquare = squares[toSquareRow][toSquareCol];
         // Unit on From square calls spawn method
         Unit spawnedUnit = fromSquare.getUnit().spawn();
         // Add unit that was spawned to the current team.

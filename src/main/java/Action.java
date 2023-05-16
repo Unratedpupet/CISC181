@@ -12,21 +12,21 @@
 public abstract class Action {
 
     protected Game game;
-    protected int fromSquareRowIndex;
-    protected int fromSquareColIndex;
-    protected int toSquareRowIndex;
-    protected int toSquareColIndex;
+    protected int fromSquareRow;
+    protected int fromSquareCol;
+    protected int toSquareRow;
+    protected int toSquareCol;
 
     // Constructor
     public Action(
-            Game game, int fromSquareRowIndex, int fromSquareColIndex,
-            int toSquareRowIndex, int toSquareColIndex
+            Game game, int fromSquareRow, int fromSquareCol,
+            int toSquareRow, int toSquareCol
     ) {
         this.game = game;
-        this.fromSquareRowIndex = fromSquareRowIndex;
-        this.fromSquareColIndex = fromSquareColIndex;
-        this.toSquareRowIndex = toSquareRowIndex;
-        this.toSquareColIndex = toSquareColIndex;
+        this.fromSquareRow = fromSquareRow;
+        this.fromSquareCol = fromSquareCol;
+        this.toSquareRow = toSquareRow;
+        this.toSquareCol = toSquareCol;
     }
 
     //Abstract method.

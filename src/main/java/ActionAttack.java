@@ -11,11 +11,17 @@
 public class ActionAttack extends Action{
 
     public ActionAttack(
-            Game game, int fromSquareRowIndex, int fromSquareColIndex,
-            int toSquareRowIndex, int toSquareColIndex
+            Game game, int fromSquareRow, int fromSquareCol,
+            int toSquareRow, int toSquareCol
     ) {
-        super(game, fromSquareRowIndex, fromSquareColIndex, toSquareRowIndex, toSquareColIndex);
+        super(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
     }
+
+    // Gets the board
+    BoardSquare[][] squares = game.getBoardSquares();
+    // Sets the from square and the to square.
+    BoardSquare fromSquare = squares[fromSquareRow][fromSquareCol];
+    BoardSquare toSquare = squares[toSquareRow][toSquareCol];
 
     /**
      * This method implements the attack action. Checks to make sure the attacking
@@ -24,11 +30,6 @@ public class ActionAttack extends Action{
      */
     public void performAction() {
         double damageAmount;
-        // Gets the board
-        BoardSquare[][] squares = game.getBoardSquares();
-        // Sets the from square and the to square.
-        BoardSquare fromSquare = squares[fromSquareRowIndex][fromSquareColIndex];
-        BoardSquare toSquare = squares[toSquareRowIndex][toSquareColIndex];
         //Gets the units and defending team
         Unit attackingUnit = fromSquare.getUnit();
         Unit defendingUnit = toSquare.getUnit();
@@ -57,5 +58,12 @@ public class ActionAttack extends Action{
         }
 
         game.changeTurn();
+    }
+
+    //TODO: Confusing copy and paste, needs fix
+    @Override
+    public String toString() {
+        return game.getCurrentPlayer().getTeam().getTeamColor() + " team's " + game.getBoardSquares()[toSquareRow][toSquareCol]
+           .getUnit().getName() + " unit attacks from " + fromSquareRow + "," + fromSquareCol + " to " + toSquareRow + "," + toSquareCol;
     }
 }
