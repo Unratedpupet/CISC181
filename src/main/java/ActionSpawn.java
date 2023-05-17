@@ -37,4 +37,9 @@ public class ActionSpawn extends Action{
         game.changeTurn();
     }
 
+    @Override
+    public String toString() {
+        return game.getCurrentPlayer().getTeam().getTeamColor() + " team's " + game.getBoardSquares()[fromSquareRow][fromSquareCol]
+           .getUnit().getName() + " unit spawns on " + toSquareRow + "," + toSquareCol + " from " + fromSquareRow + "," + fromSquareCol;
+    }
 }

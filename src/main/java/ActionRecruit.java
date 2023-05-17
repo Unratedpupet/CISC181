@@ -38,5 +38,9 @@ public class ActionRecruit extends Action{
         game.changeTurn();
     }
 
-
+    @Override
+    public String toString() {
+        return game.getCurrentPlayer().getTeam().getTeamColor() + " team's " + game.getBoardSquares()[fromSquareRow][fromSquareCol]
+           .getUnit().getName() + " unit recruits the unit on " + toSquareRow + "," + toSquareCol + " from " + fromSquareRow + "," + fromSquareCol;
+    }
 }

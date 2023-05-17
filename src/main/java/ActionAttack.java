@@ -60,10 +60,9 @@ public class ActionAttack extends Action{
         game.changeTurn();
     }
 
-    //TODO: Confusing copy and paste, needs fix
     @Override
     public String toString() {
         return game.getCurrentPlayer().getTeam().getTeamColor() + " team's " + game.getBoardSquares()[toSquareRow][toSquareCol]
-           .getUnit().getName() + " unit attacks from " + fromSquareRow + "," + fromSquareCol + " to " + toSquareRow + "," + toSquareCol;
+           .getUnit().getName() + " unit attacks " + toSquareRow + "," + toSquareCol + " from " + fromSquareRow + "," + fromSquareCol;
     }
 }

@@ -38,8 +38,7 @@ public class ActionMove extends Action {
 
     @Override
     public String toString() {
-        return game.getCurrentPlayer().getTeam().getTeamColor() + " teams " + game.getBoardSquares()[toSquareRow][toSquareCol]
+        return game.getCurrentPlayer().getTeam().getTeamColor() + " team's " + game.getBoardSquares()[toSquareRow][toSquareCol]
            .getUnit().getName() + " unit moves from " + fromSquareRow + "," + fromSquareCol + " to " + toSquareRow + "," + toSquareCol;
     }
-
 }
