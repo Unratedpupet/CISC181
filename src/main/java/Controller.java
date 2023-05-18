@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * <h1>Controller</h1>
@@ -14,6 +15,7 @@ public class Controller {
 
     private Game game;
     private TextView textView;
+    private GameEventsLinkedList gell;
 
     /**
      * This method sets up the game that was supplied by the instructor.
@@ -65,8 +67,9 @@ public class Controller {
     }
 
     public Controller() {
-        this.game = setUpGameModel();
-        this.textView = new TextView();
+        game = setUpGameModel();
+        textView = new TextView();
+        gell = new GameEventsLinkedList();
         textView.updateView(game);
     }
 
@@ -84,33 +87,42 @@ public class Controller {
             int fromSquareRow, int fromSquareCol, int toSquareRow,
             int toSquareCol, char action
             ) {
+        GameEvent ge = null;
+        int currentPlayerNum = game.getCurrentPlayer().getPlayerNumber();
         switch (action) {
             case 'M':
-                new ActionMove(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                ActionMove am = new ActionMove(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
+                am.performAction();
+                ge = new GameEvent(currentPlayerNum, "Move", am.toString());
                 break;
             case 'A':
-                new ActionAttack(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                ActionAttack aa = new ActionAttack(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
+                aa.performAction();
+                ge = new GameEvent(currentPlayerNum, "Attack", aa.toString());
                 break;
             case 'R':
-                new ActionRecruit(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                ActionRecruit ar = new ActionRecruit(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
+                ar.performAction();
+                ge = new GameEvent(currentPlayerNum, "Recruit", ar.toString());
                 break;
             case 'S':
-                new ActionSpawn(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol).performAction();
+                ActionSpawn as = new ActionSpawn(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
+                as.performAction();
+                ge = new GameEvent(currentPlayerNum, "Spawn", as.toString());
                 break;
         }
+        gell.push(new GameEventNode(ge));
     }
 
     public void playGame() {
         // Need a while statement that runs step a and step b until the action is valid per checkValidAction()
-        while (!Rules.checkValidAction(
-                game, textView.getFromRow(), textView.getFromCol(),
-                textView.getToRow(), textView.getToCol(), textView.getAction())
-        ) {
+        boolean validAction = false;
+        while (!validAction) {
 
             textView.getNextPlayersAction(game);
-            Rules.checkValidAction(
-                    game, textView.getFromRow(), textView.getFromCol(),
-                    textView.getToRow(), textView.getToCol(), textView.getAction()
+            validAction = Rules.checkValidAction(
+                game, textView.getFromRow(), textView.getFromCol(),
+                textView.getToRow(), textView.getToCol(), textView.getAction()
             );
         }
 
@@ -127,10 +139,26 @@ public class Controller {
             playGame();
         }
         else {
+            System.out.println("Winning move: " + gell.pop().getGameState().getEventDetails());
             textView.printEndOfGame(game);
+            ArrayList<GameEventsLinkedList> events = new ArrayList<GameEventsLinkedList>();
 
+            GameEventsLinkedList Move = gell.pop("Move");
+            GameEventsLinkedList Attack = gell.pop("Attack");
+            GameEventsLinkedList Recruit = gell.pop("Recruit");
+            GameEventsLinkedList Spawn = gell.pop("Spawn");
+
+            events.add(Move);
+            events.add(Attack);
+            events.add(Recruit);
+            events.add(Spawn);
+
+            Collections.sort(events);
+            for (GameEventsLinkedList event: events) {
+                
+                System.out.println(event.getHead().getGameState().getEventType() + " " + event.getSize());
+            }
         }
-
     }
 
     public static void main(String[] args) {

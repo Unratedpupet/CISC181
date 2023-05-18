@@ -130,7 +130,7 @@ public class TomJerryUnit extends Attacker {
             return true;
         }
         // Two spaces up or down the column, but no spaces across the row.
-        else if (fromColIndex == toColIndex && (fromRowIndex - toRowIndex == abs(2))) {
+        else if (fromColIndex == toColIndex && abs(fromRowIndex - toRowIndex) <= 2) {
             return true;
         }
 

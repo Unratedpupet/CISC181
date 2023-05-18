@@ -144,12 +144,12 @@ public abstract class Unit {
         this.movementModifier = movementModifier;
     }
 
-    public abstract Unit spawn();
-
     @Override
     public String toString(){
         return teamColor + " " + symbol;
     }
+
+    public abstract Unit spawn();
 
     public abstract boolean canSpawn();
 

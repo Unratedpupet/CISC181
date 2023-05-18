@@ -29,12 +29,7 @@ public class ChalkBoard {
       GameEventsLinkedList GELL3 = GELL2.pop("Roguelike");
       GELL3.display();
       System.out.println(GELL3.getSize());
-      /*
-      System.out.println('.');;
-      GELL2.display();
-      System.out.println(GELL2.getSize());
-      System.out.println(GELL2.getSize());
-      */
+      System.out.println(GELL3.toString());
 
    }
 }

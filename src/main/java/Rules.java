@@ -57,7 +57,7 @@ public class Rules {
                     case 'R':
                         if (actionSquare.getUnit() instanceof BartSimpsonUnit) {
                             if (!targetSquare.isEmpty()) {
-                                Recruiter rUnit = (BartSimpsonUnit)actionSquare.getUnit();
+                                BartSimpsonUnit rUnit = (BartSimpsonUnit)actionSquare.getUnit();
                                 return rUnit.validRecruitPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }

@@ -114,7 +114,7 @@ public class BartSimpsonUnit extends Recruiter {
             return true;
         }
         //Only two spaces across the row, no movement up or down column.
-        else if ((fromColIndex - toColIndex == abs(2)) && fromRowIndex == toRowIndex) {
+        else if ((abs(fromColIndex - toColIndex) <= 2) && fromRowIndex == toRowIndex) {
             return true;
         }
         return false;
@@ -127,7 +127,7 @@ public class BartSimpsonUnit extends Recruiter {
             return true;
         }
         //Only two spaces across the row, no movement up or down column.
-        else if ((fromColIndex - toColIndex == abs(2)) && fromRowIndex == toRowIndex) {
+        else if ((abs(fromColIndex - toColIndex) <= 2) && fromRowIndex == toRowIndex) {
             return true;
         }
         return false;
@@ -140,7 +140,7 @@ public class BartSimpsonUnit extends Recruiter {
             return true;
         }
         //Only two spaces across the row, no movement up or down column.
-        else if ((fromColIndex - toColIndex == abs(2)) && fromRowIndex == toRowIndex) {
+        else if ((abs(fromColIndex - toColIndex) <= 2) && fromRowIndex == toRowIndex) {
             return true;
         }
         return false;
