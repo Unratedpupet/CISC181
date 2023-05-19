@@ -28,18 +28,20 @@ public class ActionMove extends Action {
         // Sets the from square and the to square.
         BoardSquare fromSquare = squares[fromSquareRow][fromSquareCol];
         BoardSquare toSquare = squares[toSquareRow][toSquareCol];
+        // Get the units
+        Unit opposingUnit = toSquare.getUnit();
+
         // Gets the unit from the from square and removes it from that square.
         Unit fromUnit = fromSquare.removeUnit();
-        // Sets the from square unit to the to square
-        toSquare.setUnit(fromUnit);
         // Board Square Modification
-        //Gets the units
-        Unit opposingUnit = toSquare.getUnit();
-        Unit recruitingUnit = fromSquare.getUnit();
+
         if (toSquare == game.randomSquareAction(game.getGameBoard())) {
             game.getOpponentPlayer().getTeam().removeUnitsFromTeam(opposingUnit);
             game.getCurrentPlayer().getTeam().addUnitsToTeam(opposingUnit);
         }
+        // Sets the from square unit to the to square
+        toSquare.setUnit(fromUnit);
+
 
         game.changeTurn();
     }
