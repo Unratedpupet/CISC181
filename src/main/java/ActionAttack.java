@@ -36,6 +36,7 @@ public class ActionAttack extends Action{
         Team defendingTeam = game.getOpponentPlayer().getTeam();
 
         // Changed instance of from BS unit to Attacker to allow for Blademaster to use.
+        // New Unit Modifications
         if (attackingUnit instanceof Attacker) {
             damageAmount = ((Attacker) attackingUnit).dealDamage();
             if (defendingUnit instanceof Attacker) {

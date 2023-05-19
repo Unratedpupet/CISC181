@@ -114,7 +114,7 @@ public class Game {
     }
 
 
-    // New Board Square Modification
+    // Board Square Modification
     public BoardSquare randomSquareAction(GameBoard board) {
         return board.findRandomEmptySpace();
     }

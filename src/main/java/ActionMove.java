@@ -32,7 +32,7 @@ public class ActionMove extends Action {
         Unit fromUnit = fromSquare.removeUnit();
         // Sets the from square unit to the to square
         toSquare.setUnit(fromUnit);
-        // New random square behavior changing team.
+        // Board Square Modification
         //Gets the units
         Unit opposingUnit = toSquare.getUnit();
         Unit recruitingUnit = fromSquare.getUnit();
