@@ -65,11 +65,11 @@ public class Blademaster extends Attacker{
     public boolean validAttackPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
 
         //Across the row, but not up and down a column.
-        if (fromRowIndex == toRowIndex && fromColIndex != toColIndex) {
+        if (fromColIndex == toColIndex && (fromRowIndex - toRowIndex == abs(3))) {
             return true;
         }
         // Two spaces up or down the column, but no spaces across the row.
-        else if (fromColIndex == toColIndex && (fromRowIndex - toRowIndex == abs(2))) {
+        else if ((fromRowIndex == toRowIndex && fromColIndex != toColIndex)) {
             return true;
         }
 
