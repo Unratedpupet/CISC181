@@ -27,9 +27,13 @@ public class ScratchyUnit extends BartSimpsonUnit{
 
     public ScratchyUnit(int numTimesSpawned, boolean distract, boolean recruit) {
         super(numTimesSpawned, distract, recruit);
+        setSymbol('S');
+        setName("Scratchy");
     }
 
     public ScratchyUnit() {
+        setSymbol('S');
+        setName("Scratchy");
     }
 
     public void takeDamage(double damage) {
