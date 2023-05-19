@@ -112,4 +112,10 @@ public class Game {
     public boolean isGameEnded() {
         return playerOne.getTeam().getTeamUnits().size() <= 0 || playerTwo.getTeam().getTeamUnits().size() <= 0;
     }
+
+
+    // New Board Square Modification
+    public BoardSquare randomSquareAction(GameBoard board) {
+        return board.findRandomEmptySpace();
+    }
 }
