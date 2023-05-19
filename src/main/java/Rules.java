@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * <h1>Rules</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
@@ -73,7 +75,7 @@ public class Rules {
                     // New Rule Modification
                     case 'B':
                         if (actionSquare.getUnit() instanceof Blademaster) {
-                            if (game.getCurrentPlayer().getTeam().teamColor == targetSquare.getSquareColor()) {
+                            if (Objects.equals(game.getCurrentPlayer().getTeam().teamColor, targetSquare.getSquareColor())) {
                                 Blademaster bMUnit = (Blademaster) targetSquare.getUnit();
                                 return bMUnit.validBattleFocusPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
