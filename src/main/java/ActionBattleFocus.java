@@ -34,4 +34,10 @@ public class ActionBattleFocus extends Action{
         // Changes the damageModifier to a random number between 1 and 40.
         focusedUnit.setDamageModifier(1 + (Math.random() * 39));
     }
+
+    @Override
+    public String toString() {
+        return game.getCurrentPlayer().getTeam().getTeamColor() + " team's " + game.getBoardSquares()[toSquareRow][toSquareCol]
+                .getUnit().getName() + " unit uses BattleFocus from " + fromSquareRow + "," + fromSquareCol + " to " + toSquareRow + "," + toSquareCol;
+    }
 }

@@ -77,6 +77,7 @@ public class Rules {
                                 return bMUnit.validBattleFocusPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }
+                        break;
                 }
             }
             

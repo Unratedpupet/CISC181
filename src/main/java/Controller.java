@@ -105,6 +105,10 @@ public class Controller {
         as.performAction();
         ge = new GameEvent(currentPlayerNum, "Spawn", as.toString());
         break;
+      case 'B':
+        ActionBattleFocus ab = new ActionBattleFocus(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
+        ab.performAction();
+        ge = new GameEvent(currentPlayerNum, "BattleFocus", ab.toString());
     }
     gell.push(new GameEventNode(ge));
   }
