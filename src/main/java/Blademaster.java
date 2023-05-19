@@ -79,13 +79,8 @@ public class Blademaster extends Attacker{
     }
 
     public double dealDamage() {
-        double totalDamage = this.damage + this.damageModifier;
 
-        if (battleFocus) {
-            this.damageModifier = 10.0;
-        }
-
-        return totalDamage;
+        return this.damage + this.damageModifier;
     }
 
 }
