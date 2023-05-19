@@ -70,6 +70,7 @@ public class Rules {
                             }
                         }
                         break;
+                    // New Rule Modification
                     case 'B':
                         if (actionSquare.getUnit() instanceof Blademaster) {
                             if (game.getCurrentPlayer().getTeam().teamColor == targetSquare.getSquareColor()) {
