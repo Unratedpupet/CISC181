@@ -78,6 +78,10 @@ public class Blademaster extends Attacker{
         }
     }
 
+    public boolean validBattleFocusPath(int fromRowIndex, int fromColIndex, int toRowIndex, int toColIndex) {
+        return true;
+    }
+
     public double dealDamage() {
 
         return this.damage + this.damageModifier;

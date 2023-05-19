@@ -70,6 +70,13 @@ public class Rules {
                             }
                         }
                         break;
+                    case 'B':
+                        if (actionSquare.getUnit() instanceof Blademaster) {
+                            if (game.getCurrentPlayer().getTeam().teamColor == targetSquare.getSquareColor()) {
+                                Blademaster bMUnit = (Blademaster) targetSquare.getUnit();
+                                return bMUnit.validBattleFocusPath(actionRow, actionCol, receiveRow, receiveCol);
+                            }
+                        }
                 }
             }
             
