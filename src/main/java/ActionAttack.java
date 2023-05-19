@@ -35,10 +35,10 @@ public class ActionAttack extends Action{
         Unit defendingUnit = toSquare.getUnit();
         Team defendingTeam = game.getOpponentPlayer().getTeam();
 
-
-        if (attackingUnit instanceof TomJerryUnit) {
-            damageAmount = ((TomJerryUnit) attackingUnit).dealDamage();
-            if (defendingUnit instanceof TomJerryUnit) {
+        // Changed instance of from BS unit to Attacker to allow for Blademaster to use.
+        if (attackingUnit instanceof Attacker) {
+            damageAmount = ((Attacker) attackingUnit).dealDamage();
+            if (defendingUnit instanceof Attacker) {
                 ((TomJerryUnit) defendingUnit).takeDamage(damageAmount);
                 if (defendingUnit.getHealth() <= 0.0) {
                     //Removes unit from opposing team by removing from the to square.

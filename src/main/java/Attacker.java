@@ -51,4 +51,7 @@ public abstract class Attacker extends Unit {
 
     abstract boolean validAttackPath(int bsRowIndex, int bsColIndex, int unitRowIndex, int unitColIndex);
 
+    // Added to be able to extend to new Blademaster unit.
+    abstract double dealDamage();
+
 }
