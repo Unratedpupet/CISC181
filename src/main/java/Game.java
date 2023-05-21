@@ -128,4 +128,10 @@ public class Game {
             ) ||
             turnCountDown == 0;
     }
+
+
+    // Board Square Modification
+    public BoardSquare randomSquareAction(GameBoard board) {
+        return board.findRandomEmptySpace();
+    }
 }

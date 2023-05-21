@@ -51,4 +51,7 @@ public abstract class Attacker extends Unit {
 
     abstract boolean validAttackPath(int bsRowIndex, int bsColIndex, int unitRowIndex, int unitColIndex);
 
+    // New Unit Modifications
+    abstract double dealDamage();
+
 }

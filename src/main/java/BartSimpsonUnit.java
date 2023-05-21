@@ -106,7 +106,9 @@ public class BartSimpsonUnit extends Recruiter {
   public BartSimpsonUnit spawn() {
     if (this.canSpawn()) {
       numTimesSpawned++;
-      return new BartSimpsonUnit('b', "Bart Simpson", "Blue", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, 0, true, true);
+      return new BartSimpsonUnit('b', "Bart Simpson", "Blue",
+              100.0, 5.0, 25.0, 10.0, 0,
+              1, 1, 1, 1, 0, 0, true, true);
     }
 
     return null;

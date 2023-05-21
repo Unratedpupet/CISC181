@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 /**
  * <h1>Rules</h1>
  * <h2>CISC 181-052L Spring 2023</h2>
@@ -67,6 +69,15 @@ public class Rules {
                             if (!targetSquare.isEmpty()) {
                                 Attacker aUnit = (Attacker)actionSquare.getUnit();
                                 return aUnit.validAttackPath(actionRow, actionCol, receiveRow, receiveCol);
+                            }
+                        }
+                        break;
+                    // New Rule Modification
+                    case 'B':
+                        if (actionSquare.getUnit() instanceof Blademaster) {
+                            if (Objects.equals(game.getCurrentPlayer().getTeam().teamColor, targetSquare.getSquareColor())) {
+                                Blademaster bMUnit = (Blademaster) targetSquare.getUnit();
+                                return bMUnit.validBattleFocusPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }
                         break;

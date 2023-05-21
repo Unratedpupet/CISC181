@@ -61,6 +61,8 @@ public class GameBoard {
         return squares[rowCoord][columnCoord];
     }
 
+
+
     @Override
     public String toString(){
         StringBuilder boardString = new StringBuilder();

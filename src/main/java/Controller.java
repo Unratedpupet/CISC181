@@ -34,8 +34,16 @@ public class Controller {
     TomJerryUnit tj = new TomJerryUnit();
     tj.setTeamColor("Blu");
 
+    Blademaster bm = new Blademaster();
+    bm.setTeamColor("Blu");
+
+    ScratchyUnit su = new ScratchyUnit();
+    su.setTeamColor("Blu");
+
     piecesTeamA.add(bs);
     piecesTeamA.add(tj);
+    piecesTeamA.add(bm);
+    piecesTeamA.add(su);
 
     // Create a team object
     Team teamA = new Team("Blu", piecesTeamA);
@@ -51,11 +59,19 @@ public class Controller {
     TomJerryUnit tj2 = new TomJerryUnit();
     tj2.setTeamColor("Red");
 
+    Blademaster bm2 = new Blademaster();
+    bm.setTeamColor("Red");
+
+    ScratchyUnit su2 = new ScratchyUnit();
+    su.setTeamColor("Red");
+
     // Create a team object
     Team teamB = new Team("Red", piecesTeamB);
     Player playerTwo = new Player(2, false, teamB);
     teamB.addUnitsToTeam(bs2);
     teamB.addUnitsToTeam(tj2);
+    teamB.addUnitsToTeam(bm2);
+    teamB.addUnitsToTeam(su2);
 
     // Create an instance of the game
     return new Game(8, 8, playerOne, playerTwo);
@@ -105,6 +121,10 @@ public class Controller {
         as.performAction();
         ge = new GameEvent(currentPlayerNum, "Spawn", as.toString());
         break;
+      case 'B':
+        ActionBattleFocus ab = new ActionBattleFocus(game, fromSquareRow, fromSquareCol, toSquareRow, toSquareCol);
+        ab.performAction();
+        ge = new GameEvent(currentPlayerNum, "BattleFocus", ab.toString());
     }
     gell.push(new GameEventNode(ge));
     game.decreTurnCountdown();
