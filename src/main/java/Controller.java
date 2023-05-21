@@ -107,6 +107,7 @@ public class Controller {
         break;
     }
     gell.push(new GameEventNode(ge));
+    game.decreTurnCountdown();
   }
 
   public void playGame() {
@@ -128,18 +129,21 @@ public class Controller {
     System.out.println(game);
 
     // if not isAWinner(), repeat playGame() **recursion??** or while loop?
-    if (!game.isAWinner()) {
+    if (!game.isGameEnded()) {
       playGame();
     } else {
-      System.out.println("Winning move: " + gell.pop().getGameState().getEventDetails());
-      textView.printEndOfGame(game);
+      GameEventNode winningMove = gell.pop();
+      System.out.println("Final move: " + winningMove.getGameState().getEventDetails());
+      gell.push(winningMove);
+      if (game.isAWinner()) { textView.printEndOfGame(game); } 
+      else { System.out.println("Tied"); }
       ArrayList<GameEventsLinkedList> events = new ArrayList<GameEventsLinkedList>();
 
       while (!gell.isEmpty()) {
         events.add(gell.pop(gell.getHead().getGameState().getEventType()));
       }
 
-      Collections.sort(events);
+      Collections.sort(events,Collections.reverseOrder());
       for (GameEventsLinkedList event : events) {
 
         System.out.println(event.getHead().getGameState().getEventType() + " " + event.getSize());

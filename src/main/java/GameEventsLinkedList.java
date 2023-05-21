@@ -88,7 +88,7 @@ public class GameEventsLinkedList implements Comparable<GameEventsLinkedList>{
     }
 
     public boolean isEmpty() {
-        return head == null && size == 0;
+        return head == null;
     }
 
     public void push(GameEventNode node) {

@@ -83,7 +83,6 @@ public class TextView {
    public static int getValidInt(Scanner scnr) {
       int in = 0, mode = 0;
       do {
-         System.out.println("Enter an integer: ");
          if (scnr.hasNextInt()) {
             in = scnr.nextInt();
             mode++;

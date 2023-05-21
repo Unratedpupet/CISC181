@@ -1,4 +1,4 @@
-
+import java.util.Random;
 import java.util.Collections;
 
 /**
@@ -16,6 +16,7 @@ public class Game {
     private GameBoard board;
     private Player playerOne;
     private Player playerTwo;
+    private int turnCountDown;
 
     private GameBoard initializeGameBoard(int numRows, int numColumns) {
         GameBoard GB = new GameBoard(numRows, numColumns);
@@ -32,9 +33,11 @@ public class Game {
     }
 
     public Game(int numRows, int numColumns, Player playerOne, Player playerTwo) {
+        Random rand = new Random();
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         this.board = initializeGameBoard(numRows, numColumns);
+        this.turnCountDown = rand.nextInt(1) + 1;
     }
 
     public GameBoard getGameBoard() {
@@ -49,6 +52,8 @@ public class Game {
     public Player getOpponentPlayer() { return playerOne.getTurn() ? playerTwo : playerOne; }
     public boolean isTurn(Player player) { return player.getTurn(); }
     public BoardSquare[][] getBoardSquares() { return board.getSquares(); }
+    public int getTurnCountdown() { return this.turnCountDown; }
+    public void decreTurnCountdown() { this.turnCountDown--; }
 
     /**
      * Changes the players turn
@@ -80,7 +85,7 @@ public class Game {
                 .append("\n" + getOpponentPlayer().getTeam().toString() + "\n")
                 .append(String.join("", Collections.nCopies(10 + board.getNumColumns()*8, "*")))
                 .append("\nIt is Player " + getCurrentPlayer().getPlayerNumber() + "'s (" + getCurrentPlayer().getTeam().getTeamColor() + "'s) turn\n");
-        return retString.toString();
+        return retString.toString() + "Remaining turns: " + this.turnCountDown;
     }
 
     /**
@@ -89,9 +94,11 @@ public class Game {
      * @return - Boolean value if there is a winner.
      */
     public boolean isAWinner() {
+        int pOneSize = playerOne.getTeam().getTeamUnits().size();
+        int pTwoSize = playerTwo.getTeam().getTeamUnits().size();
         return 
-            playerOne.getTeam().getTeamUnits().size() == 0 ^
-            playerTwo.getTeam().getTeamUnits().size() == 0;
+            (pOneSize == 0 ^ pTwoSize == 0) ||
+            turnCountDown == 0 && pOneSize != pTwoSize;
     }
 
     /**
@@ -99,8 +106,13 @@ public class Game {
      * @return - The Player that is the winner.
      */
     public Player getWinner() {
+        int pOneSize = playerOne.getTeam().getTeamUnits().size();
+        int pTwoSize = playerTwo.getTeam().getTeamUnits().size();
         if (isAWinner()) {
-            return playerOne.getTeam().getTeamUnits().size() == 0 ? playerTwo : playerOne;
+            if (turnCountDown == 0) {
+                return pOneSize > pTwoSize ? playerOne : playerTwo;
+            }
+            return pOneSize == 0 ? playerTwo : playerOne;
         }
         return null;
     }
@@ -110,6 +122,10 @@ public class Game {
      * @return - boolean value of if either team has zero units.
      */
     public boolean isGameEnded() {
-        return playerOne.getTeam().getTeamUnits().size() <= 0 || playerTwo.getTeam().getTeamUnits().size() <= 0;
+        return (
+            playerOne.getTeam().getTeamUnits().size() <= 0 ||
+            playerTwo.getTeam().getTeamUnits().size() <= 0
+            ) ||
+            turnCountDown == 0;
     }
 }
