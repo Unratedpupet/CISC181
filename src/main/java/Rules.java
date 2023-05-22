@@ -79,12 +79,15 @@ public class Rules {
                             Unit targetUnit = targetSquare.getUnit();
 
                             // verify that target unit is not null and belongs to the current team
-                            if (targetUnit != null && Objects.equals(game.getCurrentPlayer().getTeam().getTeamColor(), targetUnit.getTeamColor())) {
-                                Blademaster bMUnit = (Blademaster) targetUnit;
+                            if (targetUnit != null &&
+                                    Objects.equals(game.getCurrentPlayer().getTeam().getTeamColor(), targetUnit.getTeamColor())) {
+
+                                Blademaster bMUnit = (Blademaster) actionSquare.getUnit();
                                 return bMUnit.validBattleFocusPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }
                         break;
+
 
                 }
             }
