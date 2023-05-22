@@ -66,12 +66,12 @@ public class TextView {
    public static char getUsersNextActionType(Scanner scnr) {
       char action = ' ';
       do {
-         System.out.println("M, S, R, or A?");
+         System.out.println("M, S, R, B, or A?");
          if (scnr.hasNext()){
             action = scnr.nextLine().toUpperCase().charAt(0);
          }
       }
-      while (action != 'M' && action != 'S' && action != 'R' && action != 'A');
+      while (action != 'M' && action != 'S' && action != 'R' && action != 'A' && action != 'B');
       return action;
    }
 

@@ -60,10 +60,10 @@ public class Controller {
     tj2.setTeamColor("Red");
 
     Blademaster bm2 = new Blademaster();
-    bm.setTeamColor("Red");
+    bm2.setTeamColor("Red");
 
     ScratchyUnit su2 = new ScratchyUnit();
-    su.setTeamColor("Red");
+    su2.setTeamColor("Red");
 
     // Create a team object
     Team teamB = new Team("Red", piecesTeamB);
