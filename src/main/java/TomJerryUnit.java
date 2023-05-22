@@ -91,7 +91,7 @@ public class TomJerryUnit extends Attacker {
 
     @Override
     public TomJerryUnit spawn() {
-        TomJerryUnit tj = new TomJerryUnit('t', "Tom & Jerry", "Blu", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, true, true, false);
+        TomJerryUnit tj = new TomJerryUnit('t', "Tom & Jerry", "Black", 100.0, 5.0, 25.0, 10.0, 0, 1, 1, 1, 1, 0, true, true, false);
         return tj;
     }
 

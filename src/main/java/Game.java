@@ -54,6 +54,7 @@ public class Game {
     public BoardSquare[][] getBoardSquares() { return board.getSquares(); }
     public int getTurnCountdown() { return this.turnCountDown; }
     public void decreTurnCountdown() { this.turnCountDown--; }
+    public void addTurnCountdown() { this.turnCountDown++; }
 
     /**
      * Changes the players turn

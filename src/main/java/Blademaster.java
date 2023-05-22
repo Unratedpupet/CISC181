@@ -16,7 +16,7 @@ public class Blademaster extends Attacker{
     }
 
     public Blademaster(boolean battleFocus) {
-        super('M', "Battlemaster", "Red", 100.0, 0.0,
+        super('M', "Battlemaster", "Black", 100.0, 0.0,
                 25.0, 0.0, 0, 5, 5, 1, 0, 0);
         this.battleFocus = battleFocus;
     }

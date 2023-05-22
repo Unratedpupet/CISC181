@@ -72,15 +72,23 @@ public class Rules {
                             }
                         }
                         break;
-                    // New Rule Modification
+                    // New Action Modification
                     case 'B':
                         if (actionSquare.getUnit() instanceof Blademaster) {
-                            if (Objects.equals(game.getCurrentPlayer().getTeam().teamColor, targetSquare.getSquareColor())) {
-                                Blademaster bMUnit = (Blademaster) targetSquare.getUnit();
+                            // get the unit in the target square
+                            Unit targetUnit = targetSquare.getUnit();
+
+                            // verify that target unit is not null and belongs to the current team
+                            if (targetUnit != null &&
+                                    Objects.equals(game.getCurrentPlayer().getTeam().getTeamColor(), targetUnit.getTeamColor())) {
+
+                                Blademaster bMUnit = (Blademaster) actionSquare.getUnit();
                                 return bMUnit.validBattleFocusPath(actionRow, actionCol, receiveRow, receiveCol);
                             }
                         }
                         break;
+
+
                 }
             }
             

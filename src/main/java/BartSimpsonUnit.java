@@ -30,7 +30,7 @@ public class BartSimpsonUnit extends Recruiter {
   }
 
   public BartSimpsonUnit(int numTimesSpawned, boolean distract, boolean recruit) {
-    super('B', "Bart Simpson", "Red", 100.0, 0.0, 25.0, 0.0, 0, 5, 5, 1, 0, 0);
+    super('B', "Bart Simpson", "Black", 100.0, 0.0, 25.0, 0.0, 0, 5, 5, 1, 0, 0);
     this.numTimesSpawned = numTimesSpawned;
     this.distract = distract;
     this.recruit = recruit;
