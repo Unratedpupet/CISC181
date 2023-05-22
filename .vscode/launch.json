@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Controller",
+            "request": "launch",
+            "mainClass": "Controller",
+            "projectName": "CISC181_d26ab49b"
+        },
+        {
+            "type": "java",
             "name": "ChalkBoard",
             "request": "launch",
             "mainClass": "ChalkBoard",
