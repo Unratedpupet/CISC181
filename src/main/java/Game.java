@@ -37,7 +37,7 @@ public class Game {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
         this.board = initializeGameBoard(numRows, numColumns);
-        this.turnCountDown = rand.nextInt(1) + 1;
+        this.turnCountDown = rand.nextInt(1) + 5;
     }
 
     public GameBoard getGameBoard() {
